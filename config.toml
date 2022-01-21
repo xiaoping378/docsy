@@ -1,5 +1,5 @@
 # 根目录的路径
-baseURL = "http:xiaoping378.github.io/docsy"
+baseURL = "https://xiaoping378.github.io/docsy"
 # 站点title
 title = "XX项目技术"
 
