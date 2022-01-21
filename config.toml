@@ -25,10 +25,6 @@ enableMissingTranslationPlaceholders = false
 # 注释后，可以关闭标签分类功能
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-# 
-[frontmatter]
-date = ["date", ":filename", "publishDate", "lastmod"]
-
 # 代码块高亮配置
 pygmentsCodeFences = true
 pygmentsUseClasses = false
@@ -55,9 +51,9 @@ resampleFilter = "CatmullRom"
 quality = 75
 anchor = "smart"
 
-[services]
-[services.googleAnalytics]
-# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+# [services]
+# [services.googleAnalytics]
+# # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
 # id = "UA-00000000-0"
 
 # Language configuration
@@ -129,11 +125,12 @@ version = "0.0"
 # point people to the main doc site.
 url_latest_version = "https://example.com"
 
-# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+# 方便用户反馈，提交技术文章问题的仓库地址
 github_repo = "https://github.com/google/docsy-example"
-# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+# 技术站点背后的项目issue地址
 github_project_repo = "https://github.com/google/docsy"
 
+# 以下三个是设置远程文档位置的，目前用不上
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
@@ -145,45 +142,42 @@ github_project_repo = "https://github.com/google/docsy"
 # gcs_engine_id = "d72aa9b2712488cc3"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+algolia_docsearch = true
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
 
 # User interface configuration
 [params.ui]
-#  Set to true to disable breadcrumb navigation.
+#  是否开启面包屑导航.
 breadcrumb_disable = false
-# Set to true to disable the About link in the site footer
-footer_about_disable = false
-# Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
+# 是否禁用底部About链接
+footer_about_disable = true
+# 是否展示项目logo，位置必须放置在 assets/icons/logo.svg
 navbar_logo = true
-# Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
+# 在首页，上下滑动页面，顶部导航是否开启半透明
 navbar_translucent_over_cover_disable = false
-# Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = false
-# Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+# 左侧章节树形目录是否默认折叠状态
+sidebar_menu_compact = true
+# 左侧章节树形目录上是否显示搜索框
 sidebar_search_disable = false
 
-# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
-# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
-# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
-# add "hide_feedback: true" to the page's front matter.
+# 关闭了google分析，下面选项用不上了
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
 
-# Adds a reading time to the top of each doc.
-# If you want this feature, but occasionally need to remove the Reading time from a single page, 
-# add "hide_readingtime: true" to the page's front matter
+# 在文章上面显示“阅读时长：x分钟”
 [params.ui.readingtime]
 enable = false
 
+
+# 社区community版面要用到的参数
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
