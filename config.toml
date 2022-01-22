@@ -1,7 +1,7 @@
 # 根目录的路径
 baseURL = "https://xiaoping378.github.io/docsy"
 # 站点title
-title = "XX项目技术"
+title = "小平栈"
 
 # 是否生成robots文件
 enableRobotsTXT = true
@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = false
 # 国际化翻译中，如果有缺失是否用占位符显示
 enableMissingTranslationPlaceholders = false
 
-# 注释后，可以关闭标签分类功能
+# 注释后，可以开启标签分类功能
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # 代码块高亮配置
