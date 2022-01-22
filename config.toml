@@ -1,5 +1,5 @@
 # 根目录的路径
-baseURL = "http://39.107.153.180:8080/"
+baseURL = "https://github.com/xiaoping378/docsy"
 # 站点title
 title = "小平栈"
 
