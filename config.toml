@@ -18,10 +18,9 @@ enableGitInfo = true
 contentDir = "content"
 # 默认语言
 defaultContentLanguage = "zh-cn"
-# 是否开启根路径重定位到"/content"上
-defaultContentLanguageInSubdir = false
+
 # 国际化翻译中，如果有缺失是否用占位符显示
-enableMissingTranslationPlaceholders = false
+enableMissingTranslationPlaceholders = true
 
 # 注释后，可以开启标签分类功能
 # disableKinds = ["taxonomy", "taxonomyTerm"]
