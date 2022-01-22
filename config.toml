@@ -1,5 +1,5 @@
 # 根目录的路径
-baseURL = "https://xiaoping378.github.io/docsy"
+baseURL = "http://39.107.153.180:8080/"
 # 站点title
 title = "小平栈"
 
@@ -18,12 +18,12 @@ contentDir = "content"
 # 默认语言
 defaultContentLanguage = "zh-cn"
 # 是否开启根路径重定位到"/content"上
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 # 国际化翻译中，如果有缺失是否用占位符显示
 enableMissingTranslationPlaceholders = false
 
 # 注释后，可以开启标签分类功能
-disableKinds = ["taxonomy", "taxonomyTerm"]
+# disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # 代码块高亮配置
 pygmentsCodeFences = true
@@ -138,16 +138,16 @@ github_project_repo = "https://github.com/xiaoping378/docsy"
 # or specify a new value if you want to reference another branch in your GitHub links
 # github_branch= "main"
 
-# Google Custom Search Engine ID. Remove or comment out to disable search.
+# 支持三种搜索，三选一，禁用google搜索，需要注释掉此处
 # gcs_engine_id = "d72aa9b2712488cc3"
 
 # Enable Algolia DocSearch
-algolia_docsearch = true
+algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = true
+offlineSearch = false
 
-# Enable syntax highlighting and copy buttons on code blocks with Prism
+# 默认使用的Chroma代码高亮方案，可换成prism方案。
 prism_syntax_highlighting = false
 
 # User interface configuration
