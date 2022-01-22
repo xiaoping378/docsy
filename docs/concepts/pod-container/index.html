@@ -67,13 +67,13 @@ kubectl create namespace cpu-example 指定 CPU 请求和 CPU 限制 要为容�
 <div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
 <ul class="navbar-nav mt-2 mt-lg-0">
 <li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/docsy/about/><span>About</span></a>
+<a class=nav-link href=/docsy/about/><span>关于</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class="nav-link active" href=/docsy/docs/><span class=active>文档</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/docsy/blog/><span>Blog</span></a>
+<a class=nav-link href=/docsy/blog/><span>博客</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=/docsy/community/><span>社区</span></a>
@@ -97,8 +97,17 @@ kubectl create namespace cpu-example 指定 CPU 请求和 CPU 限制 要为容�
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsy-docs-li>
 <a href=/docsy/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsy-docs><span>文档</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsy-docs-overview-li>
-<a href=/docsy/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsy-docs-overview><span>Overview</span></a>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsy-docs-site-li>
+<a href=/docsy/docs/site/ title=站点 class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsy-docs-site><span>站点介绍</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsy-docs-site-create-site-li>
+<a href=/docsy/docs/site/create_site/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsy-docs-site-create-site><span>站点搭建方法</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsy-docs-site-add-content-li>
+<a href=/docsy/docs/site/add_content/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsy-docs-site-add-content><span>编写文章注意项</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-docsy-docs-site-actions-pages-li>
+<a href=/docsy/docs/site/actions_pages/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsy-docs-site-actions-pages><span>自动托管markdown</span></a>
+</li>
+</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsy-docs-getting-started-li>
 <a href=/docsy/docs/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsy-docs-getting-started><span>Getting Started</span></a>
 <ul class="ul-2 foldable">
@@ -373,8 +382,8 @@ cpu-demo-2   0/1       Pending   0          7m
 <div class=row>
 <div class="col-6 col-sm-4 text-xs-center order-sm-2">
 <ul class="list-inline mb-0">
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=个人邮箱 aria-label=个人邮箱>
-<a class=text-white target=_blank rel=noopener href=xiaoping378@163.com aria-label=个人邮箱>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="个人邮箱 xiaoping378@163.com" aria-label="个人邮箱 xiaoping378@163.com">
+<a class=text-white target=_blank rel=noopener href=mailto:xiaoping378@163.com aria-label="个人邮箱 xiaoping378@163.com">
 <i class="fa fa-envelope"></i>
 </a>
 </li>

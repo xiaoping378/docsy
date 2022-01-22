@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – 文档</title><link>https://xiaoping378.github.io/docsy/docs/</link><description>Recent content in 文档 on 小平专栏</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://xiaoping378.github.io/docsy/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Bed and Chair Metrics</title><link>https://xiaoping378.github.io/docsy/docs/tasks/beds/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/tasks/beds/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – 文档</title><link>https://xiaoping378.github.io/docsy/docs/</link><description>Recent content in 文档 on 小平专栏</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://xiaoping378.github.io/docsy/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 站点搭建方法</title><link>https://xiaoping378.github.io/docsy/docs/site/create_site/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/site/create_site/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>主要涉及到hugo和docsy主题的介绍。&lt;/p>
+&lt;/div>
+&lt;h2 id="待编写">待编写&lt;/h2>
+&lt;p>...&lt;/p></description></item><item><title>Docs: Bed and Chair Metrics</title><link>https://xiaoping378.github.io/docsy/docs/tasks/beds/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/tasks/beds/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
@@ -524,7 +529,17 @@ This is a warning with a title.
 &lt;h3 id="external-links">External Links&lt;/h3>
 &lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
 &lt;pre tabindex="0">&lt;code>This is the final element on the page and there should be no margin below this.
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Launching Ponycopters</title><link>https://xiaoping378.github.io/docsy/docs/tasks/ponycopters/launching-ponycopters/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/tasks/ponycopters/launching-ponycopters/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: 编写文章注意项</title><link>https://xiaoping378.github.io/docsy/docs/site/add_content/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/site/add_content/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;h2 id="待编写">待编写&lt;/h2>
+&lt;p>...&lt;/p></description></item><item><title>Docs: 自动托管markdown</title><link>https://xiaoping378.github.io/docsy/docs/site/actions_pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/site/actions_pages/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>利用github actions和pages实现自动更新托管内容。&lt;/p>
+&lt;/div>
+&lt;h2 id="待编写">待编写&lt;/h2>
+&lt;p>。。。&lt;/p></description></item><item><title>Docs: Launching Ponycopters</title><link>https://xiaoping378.github.io/docsy/docs/tasks/ponycopters/launching-ponycopters/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/tasks/ponycopters/launching-ponycopters/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
