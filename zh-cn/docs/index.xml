@@ -1,0 +1,145 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – 文档</title><link>http://39.107.153.180:8080/zh-cn/docs/</link><description>Recent content in 文档 on 小平专栏</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://39.107.153.180:8080/zh-cn/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Zh-Cn: Overview</title><link>http://39.107.153.180:8080/zh-cn/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/overview/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).&lt;/p>
+&lt;p>Try answering these questions for your user in this page:&lt;/p>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.&lt;/p>
+&lt;h2 id="why-do-i-want-it">Why do I want it?&lt;/h2>
+&lt;p>Help your user know if your project will help them. Useful information can include:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>What is it good for?&lt;/strong>: What types of problems does your project solve? What are the benefits of using it?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>What is it not good for?&lt;/strong>: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>What is it &lt;em>not yet&lt;/em> good for?&lt;/strong>: Highlight any useful features that are coming soon.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="where-should-i-go-next">Where should I go next?&lt;/h2>
+&lt;p>Give your users next steps from the Overview. For example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://39.107.153.180:8080/docs/getting-started/">Getting Started&lt;/a>: Get started with $project&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/docs/examples/">Examples&lt;/a>: Check out some example code!&lt;/li>
+&lt;/ul></description></item><item><title>Zh-Cn: Getting Started</title><link>http://39.107.153.180:8080/zh-cn/docs/getting-started/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/getting-started/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>Information in this section helps your user try your project themselves.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?&lt;/p>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Is there any initial setup users need to do after installation to try your project?&lt;/p>
+&lt;h2 id="try-it-out">Try it out!&lt;/h2>
+&lt;p>Can your users test their installation, for example by running a command or deploying a Hello World example?&lt;/p></description></item><item><title>Zh-Cn: Examples</title><link>http://39.107.153.180:8080/zh-cn/docs/examples/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/examples/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>Do you have any example &lt;strong>applications&lt;/strong> or &lt;strong>code&lt;/strong> for your users in your repo or elsewhere? Link to your examples here.&lt;/p></description></item><item><title>Zh-Cn: Concepts</title><link>http://39.107.153.180:8080/zh-cn/docs/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/concepts/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>For many projects, users may not need much information beyond the information in the &lt;a href="http://39.107.153.180:8080/docs/overview/">Overview&lt;/a>, so this section is &lt;strong>optional&lt;/strong>. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.&lt;/p>
+&lt;p>Remember to focus on what the user needs to know, not just what you think is interesting about your project! If they don’t need to understand your original design decisions to use or contribute to the project, don’t put them in, or include your design docs in your repo and link to them. Similarly, most users will probably need to know more about how features work when in use rather than how they are implemented. Consider a separate architecture page for more detailed implementation and system design information that potential project contributors can consult.&lt;/p></description></item><item><title>Zh-Cn: Core Tasks</title><link>http://39.107.153.180:8080/zh-cn/docs/tasks/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/tasks/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>Think about your project’s features and use cases. Use these to choose your core tasks. Each granular use case (enable x, configure y) should have a corresponding tasks page or tasks page section. Users should be able to quickly refer to your core tasks when they need to find out how to do one specific thing, rather than having to look for the instructions in a bigger tutorial or example. Think of your tasks pages as a cookbook with different procedures your users can combine to create something more substantial.&lt;/p>
+&lt;p>You can give each task a page, or you can group related tasks together in a page, such as tasks related to a particular feature. As well as grouping related tasks in single pages, you can also group task pages in nested folders with an index page as an overview, as seen in this example site. Or if you have a small docset like the &lt;a href="https://docsy.dev/docs/">Docsy User Guide&lt;/a> with no Tutorials or Concepts pages, consider adding your feature-specific pages at the top level of your docs rather than in a Tasks section.&lt;/p>
+&lt;p>Each task should give the user&lt;/p>
+&lt;ul>
+&lt;li>The prerequisites for this task, if any (this can be specified at the top of a multi-task page if they're the same for all the page's tasks. &amp;quot;All these tasks assume that you understand....and that you have already....&amp;quot;).&lt;/li>
+&lt;li>What this task accomplishes.&lt;/li>
+&lt;li>Instructions for the task. If it involves editing a file, running a command, or writing code, provide code-formatted example snippets to show the user what to do! If there are multiple steps, provide them as a numbered list.&lt;/li>
+&lt;li>If appropriate, links to related concept, tutorial, or example pages.&lt;/li>
+&lt;/ul></description></item><item><title>Zh-Cn: Tutorials</title><link>http://39.107.153.180:8080/zh-cn/docs/tutorials/</link><pubDate>Wed, 04 Jan 2017 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/tutorials/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>Tutorials are &lt;strong>complete worked examples&lt;/strong> made up of &lt;strong>multiple tasks&lt;/strong> that guide the user through a relatively simple but realistic scenario: building an application that uses some of your project’s features, for example. If you have already created some Examples for your project you can base Tutorials on them. This section is &lt;strong>optional&lt;/strong>. However, remember that although you may not need this section at first, having tutorials can be useful to help your users engage with your example code, especially if there are aspects that need more explanation than you can easily provide in code comments.&lt;/p></description></item><item><title>Zh-Cn: Reference</title><link>http://39.107.153.180:8080/zh-cn/docs/reference/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/reference/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page that shows you how to use this template site.&lt;/p>
+&lt;/div>
+&lt;p>If your project has an API, configuration, or other reference - anything that users need to look up that’s at an even lower level than a single task - put (or link to it) here. You can serve and link to generated reference docs created using Doxygen,
+Javadoc, or other doc generation tools by putting them in your &lt;code>static/&lt;/code> directory. Find out more in &lt;a href="https://docsy.dev/docs/adding-content/content/#adding-static-content">Adding static content&lt;/a>. For OpenAPI reference, Docsy also provides a &lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/#swaggerui">Swagger UI layout and shortcode&lt;/a> that renders &lt;a href="https://swagger.io/tools/swagger-ui/">Swagger UI&lt;/a> using any OpenAPI YAML or JSON file as source.&lt;/p></description></item><item><title>Zh-Cn: Contribution Guidelines</title><link>http://39.107.153.180:8080/zh-cn/docs/contribution-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/contribution-guidelines/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>These basic sample guidelines assume that your Docsy site is deployed using Netlify and your files are stored in GitHub. You can use the guidelines &amp;quot;as is&amp;quot; or adapt them with your own instructions: for example, other deployment options, information about your doc project's file structure, project-specific review guidelines, versioning guidelines, or any other information your users might find useful when updating your site. &lt;a href="https://github.com/kubeflow/website/blob/master/README.md">Kubeflow&lt;/a> has a great example.&lt;/p>
+&lt;p>Don't forget to link to your own doc repo rather than our example site! Also make sure users can find these guidelines from your doc repo README: either add them there and link to them from this page, add them here and link to them from the README, or include them in both locations.&lt;/p>
+&lt;/div>
+&lt;p>We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website, the
+&lt;a href="https://github.com/google/docsy">Docsy&lt;/a> theme for styling and site structure,
+and &lt;a href="https://www.netlify.com/">Netlify&lt;/a> to manage the deployment of the site.
+Hugo is an open-source static site generator that provides us with templates,
+content organisation in a standard directory structure, and a website generation
+engine. You write the pages in Markdown (or HTML if you want), and Hugo wraps them up into a website.&lt;/p>
+&lt;p>All submissions, including submissions by project members, require review. We
+use GitHub pull requests for this purpose. Consult
+&lt;a href="https://help.github.com/articles/about-pull-requests/">GitHub Help&lt;/a> for more
+information on using pull requests.&lt;/p>
+&lt;h2 id="quick-start-with-netlify">Quick start with Netlify&lt;/h2>
+&lt;p>Here's a quick guide to updating the docs. It assumes you're familiar with the
+GitHub workflow and you're happy to use the automated preview of your doc
+updates:&lt;/p>
+&lt;ol>
+&lt;li>Fork the &lt;a href="https://github.com/google/docsy-example">Goldydocs repo&lt;/a> on GitHub.&lt;/li>
+&lt;li>Make your changes and send a pull request (PR).&lt;/li>
+&lt;li>If you're not yet ready for a review, add &amp;quot;WIP&amp;quot; to the PR name to indicate
+it's a work in progress. (&lt;strong>Don't&lt;/strong> add the Hugo property
+&amp;quot;draft = true&amp;quot; to the page front matter, because that prevents the
+auto-deployment of the content preview described in the next point.)&lt;/li>
+&lt;li>Wait for the automated PR workflow to do some checks. When it's ready,
+you should see a comment like this: &lt;strong>deploy/netlify — Deploy preview ready!&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>Details&lt;/strong> to the right of &amp;quot;Deploy preview ready&amp;quot; to see a preview
+of your updates.&lt;/li>
+&lt;li>Continue updating your doc and pushing your changes until you're happy with
+the content.&lt;/li>
+&lt;li>When you're ready for a review, add a comment to the PR, and remove any
+&amp;quot;WIP&amp;quot; markers.&lt;/li>
+&lt;/ol>
+&lt;h2 id="updating-a-single-page">Updating a single page&lt;/h2>
+&lt;p>If you've just spotted something you'd like to change while using the docs, Docsy has a shortcut for you:&lt;/p>
+&lt;ol>
+&lt;li>Click &lt;strong>Edit this page&lt;/strong> in the top right hand corner of the page.&lt;/li>
+&lt;li>If you don't already have an up to date fork of the project repo, you are prompted to get one - click &lt;strong>Fork this repository and propose changes&lt;/strong> or &lt;strong>Update your Fork&lt;/strong> to get an up to date version of the project to edit. The appropriate page in your fork is displayed in edit mode.&lt;/li>
+&lt;li>Follow the rest of the &lt;a href="#quick-start-with-netlify">Quick start with Netlify&lt;/a> process above to make, preview, and propose your changes.&lt;/li>
+&lt;/ol>
+&lt;h2 id="previewing-your-changes-locally">Previewing your changes locally&lt;/h2>
+&lt;p>If you want to run your own local Hugo server to preview your changes as you work:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Follow the instructions in &lt;a href="http://39.107.153.180:8080/docs/getting-started">Getting started&lt;/a> to install Hugo and any other tools you need. You'll need at least &lt;strong>Hugo version 0.45&lt;/strong> (we recommend using the most recent available version), and it must be the &lt;strong>extended&lt;/strong> version, which supports SCSS.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fork the &lt;a href="https://github.com/google/docsy-example">Goldydocs repo&lt;/a> repo into your own project, then create a local copy using &lt;code>git clone&lt;/code>. Don’t forget to use &lt;code>--recurse-submodules&lt;/code> or you won’t pull down some of the code you need to generate a working site.&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Run &lt;code>hugo server&lt;/code> in the site root directory. By default your site will be available at http://localhost:1313/. Now that you're serving your site locally, Hugo will watch for changes to the content and automatically refresh your site.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue with the usual GitHub workflow to edit files, commit them, push the
+changes up to your fork, and create a pull request.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="creating-an-issue">Creating an issue&lt;/h2>
+&lt;p>If you've found a problem in the docs, but you're not sure how to fix it yourself, please create an issue in the &lt;a href="https://github.com/google/docsy-example/issues">Goldydocs repo&lt;/a>. You can also create an issue about a specific page by clicking the &lt;strong>Create Issue&lt;/strong> button in the top right hand corner of the page.&lt;/p>
+&lt;h2 id="useful-resources">Useful resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.docsy.dev/docs/">Docsy user guide&lt;/a>: All about Docsy, including how it manages navigation, look and feel, and multi-language support.&lt;/li>
+&lt;li>&lt;a href="https://gohugo.io/documentation/">Hugo documentation&lt;/a>: Comprehensive reference for Hugo.&lt;/li>
+&lt;li>&lt;a href="https://guides.github.com/activities/hello-world/">Github Hello World!&lt;/a>: A basic introduction to GitHub concepts and workflow.&lt;/li>
+&lt;/ul></description></item></channel></rss>

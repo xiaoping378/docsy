@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – Concepts</title><link>https://xiaoping378.github.io/docsy/docs/concepts/</link><description>Recent content in Concepts on 小平专栏</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://xiaoping378.github.io/docsy/docs/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 为容器和 Pods 分配 CPU 资源</title><link>https://xiaoping378.github.io/docsy/docs/concepts/pod-container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xiaoping378.github.io/docsy/docs/concepts/pod-container/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – Concepts</title><link>http://39.107.153.180:8080/docs/concepts/</link><description>Recent content in Concepts on 小平专栏</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://39.107.153.180:8080/docs/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 为容器和 Pods 分配 CPU 资源</title><link>http://39.107.153.180:8080/docs/concepts/pod-container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/docs/concepts/pod-container/</guid><description>
 &lt;!--
 title: Assign CPU Resources to Containers and Pods
 content_type: task
@@ -219,7 +219,7 @@ to specify a default value for the CPU limit.
 &lt;li>
 &lt;p>容器在具有默认 CPU 限制的名字空间中运行，系统会自动为容器设置默认限制。
 集群管理员可以使用
-&lt;a href="https://xiaoping378.github.io/docsy/docs/reference/generated/kubernetes-api/0.0/#limitrange-v1-core/">LimitRange&lt;/a>
+&lt;a href="http://39.107.153.180:8080/docs/reference/generated/kubernetes-api/0.0/#limitrange-v1-core/">LimitRange&lt;/a>
 指定 CPU 限制的默认值。&lt;/p>
 &lt;/li>
 &lt;/ul>
@@ -265,8 +265,8 @@ Delete your namespace:
 -->
 &lt;h3 id="针对应用开发者">针对应用开发者&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/configure-pod-container/assign-memory-resource/">将内存资源分配给容器和 Pod&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/configure-pod-container/quality-service-pod/">配置 Pod 服务质量&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/configure-pod-container/assign-memory-resource/">将内存资源分配给容器和 Pod&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/configure-pod-container/quality-service-pod/">配置 Pod 服务质量&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;!--
 ### For cluster administrators
@@ -280,11 +280,11 @@ Delete your namespace:
 -->
 &lt;h3 id="针对集群管理员">针对集群管理员&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/">配置名称空间的默认内存请求和限制&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/">为名字空间配置默认 CPU 请求和限制&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster//manage-resources/memory-constraint-namespace/">为名字空间配置最小和最大内存限制&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/">为名字空间配置最小和最大 CPU 约束&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/">为名字空间配置内存和 CPU 配额&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/">为名字空间配置 Pod 配额&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xiaoping378.github.io/docsy/zh/docs/tasks/administer-cluster/quota-api-object/">配置 API 对象的配额&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/">配置名称空间的默认内存请求和限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/">为名字空间配置默认 CPU 请求和限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster//manage-resources/memory-constraint-namespace/">为名字空间配置最小和最大内存限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/">为名字空间配置最小和最大 CPU 约束&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/">为名字空间配置内存和 CPU 配额&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/">为名字空间配置 Pod 配额&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/quota-api-object/">配置 API 对象的配额&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>

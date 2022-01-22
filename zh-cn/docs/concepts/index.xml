@@ -1,0 +1,290 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小平专栏 – Concepts</title><link>http://39.107.153.180:8080/zh-cn/docs/concepts/</link><description>Recent content in Concepts on 小平专栏</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://39.107.153.180:8080/zh-cn/docs/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zh-Cn: 为容器和 Pods 分配 CPU 资源</title><link>http://39.107.153.180:8080/zh-cn/docs/concepts/pod-container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://39.107.153.180:8080/zh-cn/docs/concepts/pod-container/</guid><description>
+&lt;!--
+title: Assign CPU Resources to Containers and Pods
+content_type: task
+weight: 20
+-->
+&lt;!-- overview -->
+&lt;!--
+This page shows how to assign a CPU *request* and a CPU *limit* to
+a container. Containers cannot use more CPU than the configured limit.
+Provided the system has CPU time free, a container is guaranteed to be
+allocated as much CPU as it requests.
+-->
+&lt;p>本页面展示如何为容器设置 CPU &lt;em>request（请求）&lt;/em> 和 CPU &lt;em>limit（限制）&lt;/em>。
+容器使用的 CPU 不能超过所配置的限制。
+如果系统有空闲的 CPU 时间，则可以保证给容器分配其所请求数量的 CPU 资源。&lt;/p>
+&lt;!--
+Each node in your cluster must have at least 1 CPU.
+A few of the steps on this page require you to run the
+[metrics-server](https://github.com/kubernetes-sigs/metrics-server)
+service in your cluster. If you have the metrics-server
+running, you can skip those steps.
+following command to enable metrics-server:
+-->
+&lt;p>集群中的每个节点必须至少有 1 个 CPU 可用才能运行本任务中的示例。&lt;/p>
+&lt;p>本页的一些步骤要求你在集群中运行
+&lt;a href="https://github.com/kubernetes-sigs/metrics-server">metrics-server&lt;/a>
+服务。如果你的集群中已经有正在运行的 metrics-server 服务，可以跳过这些步骤。&lt;/p>
+&lt;p>如果你正在运行，请运行以下命令启用 metrics-server：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">minikube addons &lt;span style="color:#a2f">enable&lt;/span> metrics-server
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+To see whether metrics-server (or another provider of the resource metrics
+API, `metrics.k8s.io`) is running, type the following command:
+-->
+&lt;p>查看 metrics-server（或者其他资源度量 API &lt;code>metrics.k8s.io&lt;/code> 服务提供者）是否正在运行，
+请键入以下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl get apiservices
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+If the resource metrics API is available, the output will include a
+reference to `metrics.k8s.io`.
+-->
+&lt;p>如果资源指标 API 可用，则会输出将包含一个对 &lt;code>metrics.k8s.io&lt;/code> 的引用。&lt;/p>
+&lt;pre tabindex="0">&lt;code>NAME
+v1beta1.metrics.k8s.io
+&lt;/code>&lt;/pre>&lt;!-- steps -->
+&lt;h2 id="创建一个名字空间">创建一个名字空间&lt;/h2>
+&lt;p>创建一个，以便将
+本练习中创建的资源与集群的其余部分资源隔离。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl create namespace cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## Specify a CPU request and a CPU limit
+To specify a CPU request for a container, include the `resources:requests` field
+in the Container resource manifest. To specify a CPU limit, include `resources:limits`.
+In this exercise, you create a Pod that has one container. The container has a request
+of 0.5 CPU and a limit of 1 CPU. Here is the configuration file for the Pod:
+The `args` section of the configuration file provides arguments for the container when it starts.
+The `-cpus "2"` argument tells the Container to attempt to use 2 CPUs.
+Create the Pod:
+-->
+&lt;h2 id="指定-cpu-请求和-cpu-限制">指定 CPU 请求和 CPU 限制&lt;/h2>
+&lt;p>要为容器指定 CPU 请求，请在容器资源清单中包含 &lt;code>resources: requests&lt;/code> 字段。
+要指定 CPU 限制，请包含 &lt;code>resources:limits&lt;/code>。&lt;/p>
+&lt;p>在本练习中，你将创建一个具有一个容器的 Pod。容器将会请求 0.5 个 CPU，而且最多限制使用 1 个 CPU。
+这是 Pod 的配置文件：&lt;/p>
+&lt;p>配置文件的 &lt;code>args&lt;/code> 部分提供了容器启动时的参数。
+&lt;code>-cpus &amp;quot;2&amp;quot;&lt;/code> 参数告诉容器尝试使用 2 个 CPU。&lt;/p>
+&lt;p>创建 Pod：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl apply -f https://k8s.io/examples/pods/resource/cpu-request-limit.yaml --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+Verify that the Pod is running:
+-->
+&lt;p>验证所创建的 Pod 处于 Running 状态&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl get pod cpu-demo --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+View detailed information about the Pod:
+-->
+&lt;p>查看显示关于 Pod 的详细信息：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl get pod cpu-demo --output&lt;span style="color:#666">=&lt;/span>yaml --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+The output shows that the one container in the Pod has a CPU request of 500 milliCPU
+and a CPU limit of 1 CPU.
+-->
+&lt;p>输出显示 Pod 中的一个容器的 CPU 请求为 500 milli CPU，并且 CPU 限制为 1 个 CPU。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#008000;font-weight:bold">resources&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#008000;font-weight:bold">limits&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#008000;font-weight:bold">cpu&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#b44">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#008000;font-weight:bold">requests&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#008000;font-weight:bold">cpu&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>500m&lt;span style="color:#bbb">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+Use `kubectl top` to fetch the metrics for the pod:
+-->
+&lt;p>使用 &lt;code>kubectl top&lt;/code> 命令来获取该 Pod 的度量值数据：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl top pod cpu-demo --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+This example output shows that the Pod is using 974 milliCPU, which is
+slightly less than the limit of 1 CPU specified in the Pod configuration.
+-->
+&lt;p>此示例输出显示 Pod 使用的是 974 milliCPU，即略低于 Pod 配置中指定的 1 个 CPU 的限制。&lt;/p>
+&lt;pre tabindex="0">&lt;code>NAME CPU(cores) MEMORY(bytes)
+cpu-demo 974m &amp;lt;something&amp;gt;
+&lt;/code>&lt;/pre>&lt;!--
+Recall that by setting `-cpu "2"`, you configured the Container to attempt to use 2 CPUs, but the Container is only being allowed to use about 1 CPU. The container's CPU use is being throttled, because the container is attempting to use more CPU resources than its limit.
+-->
+&lt;p>回想一下，通过设置 &lt;code>-cpu &amp;quot;2&amp;quot;&lt;/code>，你将容器配置为尝试使用 2 个 CPU，
+但是容器只被允许使用大约 1 个 CPU。
+容器的 CPU 用量受到限制，因为该容器正尝试使用超出其限制的 CPU 资源。&lt;/p>
+&lt;!--
+Another possible explanation for the CPU use being below 1.0 is that the Node might not have
+enough CPU resources available. Recall that the prerequisites for this exercise require each of
+your Nodes to have at least 1 CPU. If your Container runs on a Node that has only 1 CPU, the Container
+cannot use more than 1 CPU regardless of the CPU limit specified for the Container.
+-->
+&lt;p>CPU 使用率低于 1.0 的另一种可能的解释是，节点可能没有足够的 CPU 资源可用。
+回想一下，此练习的先决条件需要你的节点至少具有 1 个 CPU 可用。
+如果你的容器在只有 1 个 CPU 的节点上运行，则容器无论为容器指定的 CPU 限制如何，
+都不能使用超过 1 个 CPU。&lt;/p>
+&lt;!--
+## CPU units
+The CPU resource is measured in *CPU* units. One CPU, in Kubernetes, is equivalent to:
+* 1 AWS vCPU
+* 1 GCP Core
+* 1 Azure vCore
+* 1 Hyperthread on a bare-metal Intel processor with Hyperthreading
+-->
+&lt;h2 id="cpu-units">CPU 单位 &lt;/h2>
+&lt;p>CPU 资源以 &lt;em>CPU&lt;/em> 单位度量。Kubernetes 中的一个 CPU 等同于：&lt;/p>
+&lt;ul>
+&lt;li>1 个 AWS vCPU&lt;/li>
+&lt;li>1 个 GCP核心&lt;/li>
+&lt;li>1 个 Azure vCore&lt;/li>
+&lt;li>裸机上具有超线程能力的英特尔处理器上的 1 个超线程&lt;/li>
+&lt;/ul>
+&lt;!--
+Fractional values are allowed. A Container that requests 0.5 CPU is guaranteed half as much
+CPU as a Container that requests 1 CPU. You can use the suffix m to mean milli. For example
+100m CPU, 100 milliCPU, and 0.1 CPU are all the same. Precision finer than 1m is not allowed.
+CPU is always requested as an absolute quantity, never as a relative quantity; 0.1 is the same
+amount of CPU on a single-core, dual-core, or 48-core machine.
+Delete your Pod:
+-->
+&lt;p>小数值是可以使用的。一个请求 0.5 CPU 的容器保证会获得请求 1 个 CPU 的容器的 CPU 的一半。
+你可以使用后缀 &lt;code>m&lt;/code> 表示毫。例如 &lt;code>100m&lt;/code> CPU、100 milliCPU 和 0.1 CPU 都相同。
+精度不能超过 1m。&lt;/p>
+&lt;p>CPU 请求只能使用绝对数量，而不是相对数量。0.1 在单核、双核或 48 核计算机上的 CPU 数量值是一样的。&lt;/p>
+&lt;p>删除 Pod：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl delete pod cpu-demo --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## Specify a CPU request that is too big for your Nodes
+CPU requests and limits are associated with Containers, but it is useful to think
+of a Pod as having a CPU request and limit. The CPU request for a Pod is the sum
+of the CPU requests for all the Containers in the Pod. Likewise, the CPU limit for
+a Pod is the sum of the CPU limits for all the Containers in the Pod.
+Pod scheduling is based on requests. A Pod is scheduled to run on a Node only if
+the Node has enough CPU resources available to satisfy the Pod CPU request.
+In this exercise, you create a Pod that has a CPU request so big that it exceeds
+the capacity of any Node in your cluster. Here is the configuration file for a Pod
+that has one Container. The Container requests 100 CPU, which is likely to exceed the
+capacity of any Node in your cluster.
+Create the Pod:
+-->
+&lt;h2 id="设置超过节点能力的-cpu-请求">设置超过节点能力的 CPU 请求&lt;/h2>
+&lt;p>CPU 请求和限制与都与容器相关，但是我们可以考虑一下 Pod 具有对应的 CPU 请求和限制这样的场景。
+Pod 对 CPU 用量的请求等于 Pod 中所有容器的请求数量之和。
+同样，Pod 的 CPU 资源限制等于 Pod 中所有容器 CPU 资源限制数之和。&lt;/p>
+&lt;p>Pod 调度是基于资源请求值来进行的。
+仅在某节点具有足够的 CPU 资源来满足 Pod CPU 请求时，Pod 将会在对应节点上运行：&lt;/p>
+&lt;p>在本练习中，你将创建一个 Pod，该 Pod 的 CPU 请求对于集群中任何节点的容量而言都会过大。
+下面是 Pod 的配置文件，其中有一个容器。容器请求 100 个 CPU，这可能会超出集群中任何节点的容量。&lt;/p>
+&lt;p>创建 Pod：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl apply -f https://k8s.io/examples/pods/resource/cpu-request-limit-2.yaml --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+View the Pod status:
+-->
+&lt;p>查看该 Pod 的状态：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl get pod cpu-demo-2 --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+The output shows that the Pod status is Pending. That is, the Pod has not been
+scheduled to run on any Node, and it will remain in the Pending state indefinitely:
+-->
+&lt;p>输出显示 Pod 状态为 Pending。也就是说，Pod 未被调度到任何节点上运行，
+并且 Pod 将无限期地处于 Pending 状态：&lt;/p>
+&lt;pre tabindex="0">&lt;code>NAME READY STATUS RESTARTS AGE
+cpu-demo-2 0/1 Pending 0 7m
+&lt;/code>&lt;/pre>&lt;!--
+View detailed information about the Pod, including events:
+-->
+&lt;p>查看有关 Pod 的详细信息，包含事件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl describe pod cpu-demo-2 --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+The output shows that the Container cannot be scheduled because of insufficient
+CPU resources on the Nodes:
+-->
+&lt;p>输出显示由于节点上的 CPU 资源不足，无法调度容器：&lt;/p>
+&lt;pre tabindex="0">&lt;code>Events:
+Reason Message
+------ -------
+FailedScheduling No nodes are available that match all of the following predicates:: Insufficient cpu (3).
+&lt;/code>&lt;/pre>&lt;!--
+Delete your Pod:
+-->
+&lt;p>删除你的 Pod：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl delete pod cpu-demo-2 --namespace&lt;span style="color:#666">=&lt;/span>cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## If you do not specify a CPU limit
+If you do not specify a CPU limit for a Container, then one of these situations applies:
+* The Container has no upper bound on the CPU resources it can use. The Container
+could use all of the CPU resources available on the Node where it is running.
+* The Container is running in a namespace that has a default CPU limit, and the
+Container is automatically assigned the default limit. Cluster administrators can use a
+[LimitRange](/docs/reference/generated/kubernetes-api/0.0/#limitrange-v1-core/)
+to specify a default value for the CPU limit.
+-->
+&lt;h2 id="如果不指定-cpu-限制">如果不指定 CPU 限制&lt;/h2>
+&lt;p>如果你没有为容器指定 CPU 限制，则会发生以下情况之一：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>容器在可以使用的 CPU 资源上没有上限。因而可以使用所在节点上所有的可用 CPU 资源。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>容器在具有默认 CPU 限制的名字空间中运行，系统会自动为容器设置默认限制。
+集群管理员可以使用
+&lt;a href="http://39.107.153.180:8080/docs/reference/generated/kubernetes-api/0.0/#limitrange-v1-core/">LimitRange&lt;/a>
+指定 CPU 限制的默认值。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;!--
+## If you specify a CPU limit but do not specify a CPU request
+If you specify a CPU limit for a Container but do not specify a CPU request, Kubernetes automatically
+assigns a CPU request that matches the limit. Similarly, if a Container specifies its own memory limit,
+but does not specify a memory request, Kubernetes automatically assigns a memory request that matches
+the limit.
+-->
+&lt;h2 id="如果你设置了-cpu-限制但未设置-cpu-请求">如果你设置了 CPU 限制但未设置 CPU 请求&lt;/h2>
+&lt;p>如果你为容器指定了 CPU 限制值但未为其设置 CPU 请求，Kubernetes 会自动为其
+设置与 CPU 限制相同的 CPU 请求值。类似的，如果容器设置了内存限制值但未设置
+内存请求值，Kubernetes 也会为其设置与内存限制值相同的内存请求。&lt;/p>
+&lt;!--
+## Motivation for CPU requests and limits
+By configuring the CPU requests and limits of the Containers that run in your
+cluster, you can make efficient use of the CPU resources available on your cluster
+Nodes. By keeping a Pod CPU request low, you give the Pod a good chance of being
+scheduled. By having a CPU limit that is greater than the CPU request, you accomplish two things:
+* The Pod can have bursts of activity where it makes use of CPU resources that happen to be available.
+* The amount of CPU resources a Pod can use during a burst is limited to some reasonable amount.
+-->
+&lt;h2 id="cpu-请求和限制的初衷">CPU 请求和限制的初衷&lt;/h2>
+&lt;p>通过配置你的集群中运行的容器的 CPU 请求和限制，你可以有效利用集群上可用的 CPU 资源。
+通过将 Pod CPU 请求保持在较低水平，可以使 Pod 更有机会被调度。
+通过使 CPU 限制大于 CPU 请求，你可以完成两件事：&lt;/p>
+&lt;ul>
+&lt;li>Pod 可能会有突发性的活动，它可以利用碰巧可用的 CPU 资源。&lt;/li>
+&lt;li>Pod 在突发负载期间可以使用的 CPU 资源数量仍被限制为合理的数量。&lt;/li>
+&lt;/ul>
+&lt;!--
+## Clean up
+Delete your namespace:
+-->
+&lt;h2 id="清理">清理&lt;/h2>
+&lt;p>删除名称空间：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl delete namespace cpu-example
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+### For app developers
+* [Assign Memory Resources to Containers and Pods](/docs/tasks/configure-pod-container/assign-memory-resource/)
+* [Configure Quality of Service for Pods](/docs/tasks/configure-pod-container/quality-service-pod/)
+-->
+&lt;h3 id="针对应用开发者">针对应用开发者&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/configure-pod-container/assign-memory-resource/">将内存资源分配给容器和 Pod&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/configure-pod-container/quality-service-pod/">配置 Pod 服务质量&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;!--
+### For cluster administrators
+* [Configure Default Memory Requests and Limits for a Namespace](/docs/tasks/administer-cluster/memory-default-namespace/)
+* [Configure Default CPU Requests and Limits for a Namespace](/docs/tasks/administer-cluster/cpu-default-namespace/)
+* [Configure Minimum and Maximum Memory Constraints for a Namespace](/docs/tasks/administer-cluster/memory-constraint-namespace/)
+* [Configure Minimum and Maximum CPU Constraints for a Namespace](/docs/tasks/administer-cluster/cpu-constraint-namespace/)
+* [Configure Memory and CPU Quotas for a Namespace](/docs/tasks/administer-cluster/quota-memory-cpu-namespace/)
+* [Configure a Pod Quota for a Namespace](/docs/tasks/administer-cluster/quota-pod-namespace/)
+* [Configure Quotas for API Objects](/docs/tasks/administer-cluster/quota-api-object/)
+-->
+&lt;h3 id="针对集群管理员">针对集群管理员&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/">配置名称空间的默认内存请求和限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/">为名字空间配置默认 CPU 请求和限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster//manage-resources/memory-constraint-namespace/">为名字空间配置最小和最大内存限制&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/">为名字空间配置最小和最大 CPU 约束&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/">为名字空间配置内存和 CPU 配额&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/">为名字空间配置 Pod 配额&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://39.107.153.180:8080/zh/docs/tasks/administer-cluster/quota-api-object/">配置 API 对象的配额&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
