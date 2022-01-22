@@ -1,7 +1,8 @@
 # 根目录的路径
 baseURL = "https://github.com/xiaoping378/docsy"
-# 站点title
-title = "小平栈"
+
+# 站点title,会被多语言里的设置覆盖
+# title = "小平栈"
 
 # 是否生成robots文件
 enableRobotsTXT = true
