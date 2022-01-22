@@ -1,5 +1,5 @@
 # 根目录的路径
-baseURL = "https://github.com/xiaoping378/docsy"
+baseURL = "https://xiaoping378.github.io/docsy"
 
 # 站点title,会被多语言里的设置覆盖
 # title = "小平栈"
