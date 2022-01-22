@@ -19,12 +19,21 @@ contentDir = "content"
 # 默认语言
 defaultContentLanguage = "zh-cn"
 # 是否开启根路径重定位到"/content"上
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 # 国际化翻译中，如果有缺失是否用占位符显示
 enableMissingTranslationPlaceholders = false
 
 # 注释后，可以开启标签分类功能
 # disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params.taxonomy]
+# set taxonomyCloud = [] to hide taxonomy clouds
+taxonomyCloud = ["tags"] 
+# If used, must have same lang as taxonomyCloud
+taxonomyCloudTitle = ["标签"] 
+# set taxonomyPageHeader = [] to hide taxonomies on the page headers
+taxonomyPageHeader = ["tags"] 
+
 
 # 代码块高亮配置
 pygmentsCodeFences = true
@@ -35,7 +44,7 @@ pygmentsUseClassic = false
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "emacs"
 
-# 配置编译产物的路径.
+# 配置blog编译产物的路径.
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
 
@@ -129,11 +138,11 @@ version = "0.0"
 # 方便用户反馈，提交技术文章问题的仓库地址
 github_repo = "https://github.com/xiaoping378/docsy"
 # 技术站点背后的项目issue地址
-github_project_repo = "https://github.com/xiaoping378/docsy"
+# github_project_repo = "https://github.com/xiaoping378/docsy"
 
-# 以下三个是设置远程文档位置的，目前用不上
+# 以下三个是设置远程文档位置的，目前用不上，这里hack一下，不然“编辑此页”的功能会去链接到content/zh-cn下
 # Specify a value here if your content directory is not in your repo's root directory
-# github_subdir = ""
+github_subdir = "/"
 
 # Uncomment this if you have a newer GitHub repo with "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
@@ -153,20 +162,20 @@ prism_syntax_highlighting = false
 
 # User interface configuration
 [params.ui]
-#  是否开启面包屑导航.
+#  是否禁用面包屑导航.
 breadcrumb_disable = false
 # 是否禁用底部About链接
 footer_about_disable = true
 # 是否展示项目logo，位置必须放置在 assets/icons/logo.svg
 navbar_logo = true
-# 在首页，上下滑动页面，顶部导航是否开启半透明
+# 在首页，上下滑动页面，顶部导航是否禁用半透明
 navbar_translucent_over_cover_disable = false
 # 左侧章节树形目录是否默认折叠状态
 sidebar_menu_compact = true
-# 左侧章节树形目录上是否显示搜索框
+# 左侧章节树形目录上是否不显示搜索框，前提是需要开启搜索功能
 sidebar_search_disable = false
 
-# 关闭了google分析，下面选项用不上了
+# 关闭了google分析，下面功能不会启用
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
@@ -182,33 +191,33 @@ enable = false
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
-  name = "User mailing list"
-  url = "https://example.org/mail"
+  name = "个人邮箱"
+  url = "xiaoping378@163.com"
   icon = "fa fa-envelope"
-  desc = "Discussion and help from your fellow users"
+  desc = "欢迎邮件交流"
 [[params.links.user]]
-  name ="Twitter"
-  url = "https://example.org/twitter"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
+  name ="微博"
+  url = "https://weibo.com/xiaoping378"
+  icon = "fab fa-weibo"
+  desc = "个人微博，基本不用"
 [[params.links.user]]
-  name = "Stack Overflow"
-  url = "https://example.org/stack"
-  icon = "fab fa-stack-overflow"
-  desc = "Practical questions and curated answers"
+  name = "知乎"
+  url = "https://www.zhihu.com/people/xiaoping378"
+  icon = "fab fa-zhihu"
+  desc = "知乎专栏"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
   name = "GitHub"
-  url = "https://github.com/google/docsy"
+  url = "https://github.com/xiaoping378/blog"
   icon = "fab fa-github"
-  desc = "Development takes place here!"
+  desc = "文集开源地址!"
 [[params.links.developer]]
   name = "Slack"
   url = "https://example.org/slack"
   icon = "fab fa-slack"
-  desc = "Chat with other project developers"
+  desc = "未开通"
 [[params.links.developer]]
   name = "Developer mailing list"
   url = "https://example.org/mail"
   icon = "fa fa-envelope"
-  desc = "Discuss development issues around the project"
+  desc = "未开通"
