@@ -1,7 +1,7 @@
 
 ---
-title: "Core Tasks"
-linkTitle: "Core Tasks"
+title: "网络篇"
+linkTitle: "网络篇"
 weight: 6
 date: 2017-01-05
 description: >

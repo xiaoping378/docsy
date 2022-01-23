@@ -1,8 +1,7 @@
 ---
-categories: ["Examples", "测试分类"]
-tags: ["test", "sample", "docs"]
-title: "Example Page"
-linkTitle: "Example Page"
+tags: ["linux", "sample", "docs"]
+title: "linux基础"
+linkTitle: "linux基础"
 date: 2017-01-05
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.

@@ -1,6 +1,6 @@
 ---
-title: "Parameter Reference"
-linkTitle: "Parameter Reference"
+title: "优秀文集"
+linkTitle: "优秀文集"
 date: 2017-01-05
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.

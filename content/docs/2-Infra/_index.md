@@ -1,8 +1,7 @@
 ---
-categories: ["Examples", "Placeholders"]
-tags: ["test","docs"] 
-title: "Getting Started"
-linkTitle: "Getting Started"
+tags: ["linux","基础"] 
+title: "基础知识"
+linkTitle: "基础知识"
 weight: 2
 description: >
   What does your user need to know to try your project?

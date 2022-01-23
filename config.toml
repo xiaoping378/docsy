@@ -169,7 +169,7 @@ footer_about_disable = true
 navbar_logo = true
 # 在首页，上下滑动页面，顶部导航是否禁用半透明
 navbar_translucent_over_cover_disable = false
-# 左侧章节树形目录是否默认折叠状态
+# 左侧章节树形目录默认是否处于折叠状态
 sidebar_menu_compact = true
 # 左侧章节树形目录上是否不显示搜索框，前提是需要开启搜索功能
 sidebar_search_disable = false
